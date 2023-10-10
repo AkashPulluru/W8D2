@@ -93,4 +93,58 @@ function doubler(array) {
     };
 }
 
-console.log([[0, 1, 2], [3, 4, 5], [6, 7, 8]].myMap(doubler))
+// console.log([[0, 1, 2], [3, 4, 5], [6, 7, 8]].myMap(doubler))
+
+Array.prototype.myReduce = function(callback, initialValue) {
+    let accumulator;
+    let arr;
+
+    if (initialValue !== undefined) {
+        arr = this;
+        accumulator = initialValue;
+    }
+    else {
+        arr = this.slice(1)
+        accumulator = this[0];
+    };
+
+
+    arr.myEach(function(ele){
+        accumulator = callback(accumulator, ele);
+    });
+    return accumulator;
+};
+
+    function adder(accumulator, num) {
+        return accumulator + num;
+    }
+
+
+// console.log([1,2,3].myReduce(adder, 0));
+
+Array.prototype.bubbleSort = function() {
+    let arr = this;
+    let length = arr.length;
+
+    let i = 1;
+    let j = 0;
+
+    while (i < length) {
+        while ( j < length - 1) {
+            if(arr[i] < arr[j]) {
+                let holder1 = arr[j];
+                let holder2 = arr[i];
+                arr[i] = holder1
+                arr[j] = holder2
+                i = 1
+                j = 0
+            };
+
+            i += 1;
+            j += 1;
+        };
+    };
+    return arr; 
+}
+
+console.log([1,4,5,3,3,3].bubbleSort())

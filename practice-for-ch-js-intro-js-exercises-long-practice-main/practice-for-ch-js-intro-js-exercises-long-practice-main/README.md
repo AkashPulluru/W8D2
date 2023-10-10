@@ -77,7 +77,7 @@ new language you've been learning.
   element in the array, just like `Array.prototype.forEach`.
   - Note that JavaScript's `forEach` function has no return value (i.e., it
     returns `undefined`).
-- `Array.prototype.myMap(callback)`  
+- `Array.prototype.myMap(callback)`
   `myMap` should receive a callback function and return a new array of the
   results of calling the callback function on each element of the array.
   - Use your `myEach` and a closure.
