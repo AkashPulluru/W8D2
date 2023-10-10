@@ -147,4 +147,26 @@ Array.prototype.bubbleSort = function() {
     return arr; 
 }
 
-console.log([1,4,5,3,3,3].bubbleSort())
+// console.log([1,4,5,3,3,3].bubbleSort())
+
+String.prototype.substrings = function() {
+    let length = this.length;
+    substrings = [];
+
+    let i = 0; 
+    let j = 0 
+
+    while (i < length) { 
+        while (j < length) {    
+            substrings.push(this.slice(i, j));
+            j += 1;
+        };
+
+        i += 1; 
+        j = i; 
+    };
+
+    return substrings;
+};
+
+console.log("hello".substrings())
