@@ -67,4 +67,30 @@ Array.prototype.myEach = function(callback) {
     }; 
 }
 
-console.log([[0, 1, 2], [3, 4, 5], [6, 7, 8]].myEach(printEle))
+// console.log([[0, 1, 2], [3, 4, 5], [6, 7, 8]].myEach(printEle))
+
+Array.prototype.myMap = function(callback) {
+
+    let length = this.length;
+
+    let i = 0; 
+
+    while ( i < length ) {
+        callback(this[i]);
+        i = i + 1;
+    };
+}
+
+function doubler(array) {
+    let length = array.length;
+
+    let i = 0;
+
+    while (i < length) {
+        let ele = array[i] * 2;
+        console.log(ele);
+        i = i + 1;
+    };
+}
+
+console.log([[0, 1, 2], [3, 4, 5], [6, 7, 8]].myMap(doubler))
