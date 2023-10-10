@@ -29,3 +29,42 @@ Array.prototype.twoSum = function(){
 
 // console.log([-1, 0, 2, -2, 1].twoSum())
 
+Array.prototype.transpose = function () {
+    let transposeArray = [];
+
+    const length = this.length
+    let i =  0
+    let j = 0 
+
+    while (i < length) {
+        let holderArray = []; 
+        while (j < length) {
+            holderArray.push(this[j][i])
+            j = j + 1 };
+        j = 0;    
+        transposeArray.push(holderArray);    
+    i = i + 1 };
+
+    return transposeArray;
+}
+
+
+// console.log([[0, 1, 2], [3, 4, 5], [6, 7, 8]].transpose())
+
+
+function printEle(ele) {   
+    console.log(ele);
+}
+
+Array.prototype.myEach = function(callback) {
+    let length = this.length;
+    
+    let i = 0;
+    
+    while ( i < length) {
+        callback(this[i]);
+        i = i + 1;
+    }; 
+}
+
+console.log([[0, 1, 2], [3, 4, 5], [6, 7, 8]].myEach(printEle))
